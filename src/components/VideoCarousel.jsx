@@ -1,6 +1,37 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import { highlightsSlides } from "../constants";
+import gsap from "gsap";
 const VideoCarousel = () => {
+	const [loadedData, setLoadedData] = useState([]);
+
+	const videoRef = useRef([]);
+	const videoSpanRef = useRef([]);
+	const videoDivRef = useRef([]);
+
+	const [video, setVideo] = useState({
+		isEnd: false,
+		startPlay: false,
+		videoId: 0,
+		isLastVideo: false,
+		isPlaying: false,
+	});
+
+	const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
+
+	useEffect(() => {}, [startPlay, videoId, isPlaying, loadedData]);
+
+	useEffect(() => {
+		const currentProgress = 0;
+		let span = videoSpanRef.current;
+		if (span[videoId]) {
+			//animate the progress of the video
+			let anim = gsap.to("span[videoId]", {
+				onUpdate: () => {},
+				onComplete: () => {},
+			});
+		}
+	}, [videoId, startPlay]);
+
 	return (
 		<>
 			<div className="flex items-center">
