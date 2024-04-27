@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { heroVideo, smallHeroVideo } from "../utils";
 
 const Hero = () => {
 	useGSAP(() => {
@@ -14,6 +15,11 @@ const Hero = () => {
 				<p id="hero" className="hero-title">
 					iPhone 15 Pro
 				</p>
+			</div>
+			<div className="md:w-10/12 w-9/12">
+				<video>
+					<source src={videoSrc} />
+				</video>
 			</div>
 		</section>
 	);
