@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef, useState } from "react";
 
-import { highlightsSlides } from "../constants";
+import { hightlightsSlides } from "../constants";
 import { pauseImg, playImg, replayImg } from "../utils";
 
 const VideoCarousel = () => {
@@ -101,7 +101,7 @@ const VideoCarousel = () => {
 			const animUpdate = () => {
 				anim.progress(
 					videoRef.current[videoId].currentTime /
-						highlightsSlides[videoId].videoDuration
+						hightlightsSlides[videoId].videoDuration
 				);
 			};
 
@@ -158,7 +158,7 @@ const VideoCarousel = () => {
 	return (
 		<>
 			<div className="flex items-center">
-				{highlightsSlides.map((list, i) => (
+				{hightlightsSlides.map((list, i) => (
 					<div key={list.id} id="slider" className="sm:pr-20 pr-10">
 						<div className="video-carousel_container">
 							<div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
